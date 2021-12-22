@@ -1,6 +1,15 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/22 23:23:05 by rnait-el          #+#    #+#             */
+/*   Updated: 2021/12/23 00:49:45 by rnait-el         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static int		ft_estim(long n)
 {
 	size_t	estim;
 	int		isneg;
@@ -21,7 +30,7 @@ static int		ft_estim(long n)
 	return (estim);
 }
 
-static char		*ft_gen(char *rtn, long nbr, int len, int isneg)
+static char	*ft_gen(char *rtn, long nbr, int len, int isneg)
 {
 	if (nbr != 0)
 		rtn = malloc(sizeof(char) * (len + 1));
@@ -48,7 +57,7 @@ static char		*ft_gen(char *rtn, long nbr, int len, int isneg)
 	return (rtn);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int		len;
 	char	*rtn;
