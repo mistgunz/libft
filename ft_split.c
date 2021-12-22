@@ -1,107 +1,87 @@
 #include "libft.h"
 
-static int		ft_hm(char const *s, char c)
+static int	ft_wcount(const char *s, char c)
 {
-	size_t	nbr;
-	int		i;
+	int	i;
 
-	nbr = 0;
 	i = 0;
-	while (s[i])
+	while (*s == c && *s)
+		s++;
+	while (*s)
 	{
-		while (s[i] == c)
+		if (*s != c && *s)
 			i++;
-		if (i > 0 && s[i] && s[i - 1] == c)
-			nbr++;
-		if (s[i])
-			i++;
-	}
-	if (nbr == 0 && s[i - 1] == c)
+		while (*s != c && *s)
+			s++;
+		if (!*s)
+			break ;
+		s++;
+	}	
+	return (i);
+}
+
+static char	*ft_strndup(const char *s, int n, char **b)
+{
+	char	*a;
+
+	a = malloc(sizeof(char) * n + 1);
+	if (a == NULL)
+	{
+		free(b);
 		return (0);
-	if (s[0] != c)
-		nbr++;
-	return (nbr);
-}
-
-static char		**ft_mal(char **strs, char const *s, char c)
-{
-	size_t	count;
-	int		i;
-	int		h;
-
-	count = 0;
-	i = 0;
-	h = 0;
-	while (s[h])
-	{
-		if (s[h] != c)
-			count++;
-		else if (h > 0 && s[h - 1] != c)
-		{
-			strs[i] = malloc(sizeof(char) * (count + 1));
-			if (!strs[i])
-				return (0);
-			count = 0;
-			i++;
-		}
-		if (s[h + 1] == '\0' && s[h] != c)
-			if (!(strs[i] = malloc(sizeof(char) * count + 1)))
-				return (0);
-		h++;
 	}
-	return (strs);
+	ft_memcpy(a, s, n);
+	a[n] = '\0';
+	return (a);
 }
 
-static char		**ft_cpy(char **strs, char const *s, char c)
+static char	**ft_strmalldup(char **b, const char *s, char c)
 {
-	int i;
-	int j;
-	int h;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
-	h = 0;
-	while (s[h])
+	while (*s)
 	{
-		if (s[h] != c)
-			strs[i][j++] = s[h];
-		else if (h > 0 && s[h - 1] != c)
-			if (h != 0)
-			{
-				strs[i][j] = '\0';
-				j = 0;
-				i++;
-			}
-		if (s[h + 1] == '\0' && s[h] != c)
-			strs[i][j] = '\0';
-		h++;
+		while (*s != c && *s)
+		{
+			i++;
+			s++;
+		}
+		if ((*s == c && *s && *(s - 1) != c) || (!*s && *(s - 1) != c))
+		{
+			b[j] = ft_strndup(s - i, i, b);
+			j++;
+			i = 0;
+		}
+		if (!*s)
+			break ;
+		s++;
 	}
-	return (strs);
+	return (b);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char	**rtn;
-	int		nbr_w;
+	char	**b;
+	int		w_count;
 
-	if (!s || !*s)
+	if (!s)
 	{
-		if (!(rtn = malloc(sizeof(char *) * 1)))
-			return (NULL);
-		*rtn = (void *)0;
-		return (rtn);
+		b = malloc(sizeof(char *));
+		if (b == NULL)
+			return (0);
+		*b = 0;
+		return (b);
 	}
-	nbr_w = ft_hm(s, c);
-	rtn = malloc(sizeof(char *) * (nbr_w + 1));
-	if (!rtn)
+	while (*s == c && *s)
+		s++;
+	w_count = ft_wcount(s, c);
+	b = malloc(sizeof(char *) * (w_count + 1));
+	if (b == NULL)
 		return (0);
-	if (ft_mal(rtn, s, c) != 0)
-		ft_cpy(rtn, s, c);
-	else
-	{
-		free(rtn);
-		return (NULL);
-	}
-	rtn[nbr_w] = (void *)0;
-	return (rtn);
+	ft_strmalldup(b, s, c);
+	b[w_count] = NULL;
+	return (b);
 }

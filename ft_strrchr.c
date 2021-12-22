@@ -1,17 +1,15 @@
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(char *str, char c)
 {
-	int		i;
-	char	*ptr;
+	int	i;
 
 	i = 0;
-	ptr = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			ptr = (char *)(s + i);
+	while (str[i])
 		i++;
+	while (i >= 0)
+	{
+		if (str[i] == c)
+			return (&str[i]);
+		i--;
 	}
-	if (s[i] == c)
-		ptr = (char *)(s + i);
-	return (ptr);
+	return (0);
 }
