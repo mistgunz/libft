@@ -6,10 +6,11 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:23:05 by rnait-el          #+#    #+#             */
-/*   Updated: 2021/12/23 00:49:45 by rnait-el         ###   ########.fr       */
+/*   Updated: 2021/12/23 01:04:30 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+static int	ft_estim(long n)
 {
 	size_t	estim;
 	int		isneg;
