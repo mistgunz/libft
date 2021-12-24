@@ -6,9 +6,12 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:16:53 by rnait-el          #+#    #+#             */
-/*   Updated: 2021/12/22 23:19:31 by rnait-el         ###   ########.fr       */
+/*   Updated: 2021/12/24 00:55:34 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+
 int	ft_atoi(const char *str)
 {
 	long	i;

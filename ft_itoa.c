@@ -6,70 +6,60 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:23:05 by rnait-el          #+#    #+#             */
-/*   Updated: 2021/12/23 01:04:30 by rnait-el         ###   ########.fr       */
+/*   Updated: 2021/12/24 00:56:10 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_estim(long n)
-{
-	size_t	estim;
-	int		isneg;
+#include "libft.h"
 
-	estim = 0;
-	isneg = 0;
+static int	ft_count(int n)
+{
+	unsigned int	i;
+	int				j;
+
+	i = n;
 	if (n < 0)
+		i = -n;
+	j = 0;
+	while (i != 0)
 	{
-		estim++;
-		isneg++;
-		n = -n;
+		i /= 10;
+		j++;
 	}
-	while (n >= 1)
-	{
-		estim++;
-		n /= 10;
-	}
-	return (estim);
+	return (j);
 }
 
-static char	*ft_gen(char *rtn, long nbr, int len, int isneg)
+static void	put_digit(char *c, unsigned int i, int j)
 {
-	if (nbr != 0)
-		rtn = malloc(sizeof(char) * (len + 1));
-	else
-		return (rtn = ft_strdup("0"));
-	if (!rtn)
-		return (0);
-	isneg = 0;
-	if (nbr < 0)
+	while (i != 0)
 	{
-		isneg++;
-		nbr = -nbr;
+		j--;
+		c[j] = (i % 10 + 48);
+		i = i / 10;
 	}
-	rtn[len] = '\0';
-	while (--len)
-	{
-		rtn[len] = (nbr % 10) + '0';
-		nbr /= 10;
-	}
-	if (isneg == 1)
-		rtn[0] = '-';
-	else
-		rtn[0] = (nbr % 10) + '0';
-	return (rtn);
 }
 
 char	*ft_itoa(int n)
 {
-	int		len;
-	char	*rtn;
-	long	nbr;
-	int		isneg;
+	unsigned int	i;
+	int				j;
+	char			*c;
 
-	nbr = n;
-	len = ft_estim(nbr);
-	rtn = 0;
-	isneg = 0;
-	if (!(rtn = ft_gen(rtn, nbr, len, isneg)))
+	j = ft_count(n);
+	i = n;
+	if (n <= 0)
+	{
+		i = -n;
+		j += 1;
+	}	
+	c = malloc(sizeof(char) * j + 1);
+	if (c == NULL)
 		return (0);
-	return (rtn);
+	if (n < 0)
+		*c = '-';
+	if (!n)
+		*c = '0';
+	c[j] = '\0';
+	put_digit(c, i, j);
+	return (c);
 }

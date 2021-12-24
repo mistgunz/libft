@@ -6,14 +6,13 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:25:29 by rnait-el          #+#    #+#             */
-/*   Updated: 2021/12/22 23:25:29 by rnait-el         ###   ########.fr       */
+/*   Updated: 2021/12/24 00:07:11 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-char		*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	s1_len;
 	size_t	s2_len;

@@ -6,17 +6,16 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:24:09 by rnait-el          #+#    #+#             */
-/*   Updated: 2021/12/22 23:24:09 by rnait-el         ###   ########.fr       */
+/*   Updated: 2021/12/24 01:43:17 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *new_list;
-	t_list *save;
+	t_list	*new_list;
+	t_list	*save;
 
 	if (!lst || !f || !del)
 		return (0);

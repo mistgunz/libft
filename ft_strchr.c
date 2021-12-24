@@ -6,10 +6,9 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:25:08 by rnait-el          #+#    #+#             */
-/*   Updated: 2021/12/22 23:25:08 by rnait-el         ###   ########.fr       */
+/*   Updated: 2021/12/24 00:19:08 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -28,4 +27,3 @@ char	*ft_strchr(const char *s, int c)
 		return (&b[i]);
 	return (0);
 }
-

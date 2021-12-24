@@ -6,16 +6,15 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:24:18 by rnait-el          #+#    #+#             */
-/*   Updated: 2021/12/22 23:24:18 by rnait-el         ###   ########.fr       */
+/*   Updated: 2021/12/24 00:12:18 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-int		ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	while (lst)

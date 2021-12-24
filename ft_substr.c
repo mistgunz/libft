@@ -6,31 +6,35 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:26:09 by rnait-el          #+#    #+#             */
-/*   Updated: 2021/12/22 23:26:09 by rnait-el         ###   ########.fr       */
+/*   Updated: 2021/12/24 01:36:25 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*rtn;
+{	
+	char	*c;
 	size_t	i;
 
 	if (!s)
-		return (NULL);
-	if ((size_t)start > ft_strlen(s))
-		return (ft_strdup(""));
-	rtn = malloc(sizeof(char) * (len + 1));
+		return (0);
+	if (start >= ft_strlen(s) || !*s || !len)
+	{
+		c = ft_strdup("\0");
+		return (c);
+	}
+	if (len >= ft_strlen(s))
+		len = ft_strlen(s);
 	i = 0;
-	if (!rtn)
+	c = malloc(sizeof(char) * len + 1);
+	if (!c)
 		return (0);
 	while (i < len)
 	{
-		rtn[i] = *(s + start + i);
+		c[i] = s[start + i];
 		i++;
 	}
-	rtn[i] = '\0';
-	return (rtn);
+	c[i] = '\0';
+	return (c);
 }

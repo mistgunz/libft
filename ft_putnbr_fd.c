@@ -6,16 +6,15 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:24:53 by rnait-el          #+#    #+#             */
-/*   Updated: 2021/12/22 23:24:53 by rnait-el         ###   ########.fr       */
+/*   Updated: 2021/12/24 00:18:04 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char c;
+	char	c;
 
 	if (n == -2147483648)
 		write(fd, "-2147483648", 11);

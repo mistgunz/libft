@@ -6,16 +6,15 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:24:14 by rnait-el          #+#    #+#             */
-/*   Updated: 2021/12/22 23:24:14 by rnait-el         ###   ########.fr       */
+/*   Updated: 2021/12/24 00:05:31 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *rtn;
+	t_list	*rtn;
 
 	rtn = (t_list *)malloc(sizeof(t_list));
 	if (!rtn)
