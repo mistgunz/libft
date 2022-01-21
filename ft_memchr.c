@@ -6,7 +6,7 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:24:22 by rnait-el          #+#    #+#             */
-/*   Updated: 2021/12/24 00:14:55 by rnait-el         ###   ########.fr       */
+/*   Updated: 2022/01/21 23:35:37 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	unsigned char	*str;
 	unsigned char	character;
+	unsigned char	*str;
+	size_t	i;
 
 	str = (unsigned char *)s;
 	character = (unsigned char)c;

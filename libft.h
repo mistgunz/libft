@@ -6,7 +6,7 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 21:07:49 by rnait-el          #+#    #+#             */
-/*   Updated: 2021/12/24 00:26:31 by rnait-el         ###   ########.fr       */
+/*   Updated: 2022/01/21 23:38:59 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
-void                ft_striteri(char *s, void (*f)(unsigned int, char *));
+void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_memcpy(void *dst, const void *src, size_t n);

@@ -6,7 +6,7 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:26:05 by rnait-el          #+#    #+#             */
-/*   Updated: 2021/12/24 00:23:51 by rnait-el         ###   ########.fr       */
+/*   Updated: 2022/01/21 23:35:57 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	if (start == ft_strlen(s1))
 	{
-		if (!(rtn = ft_strdup("")))
+		if (!(rtn == ft_strdup("")))
 			return (NULL);
 		else
 			return (rtn);
@@ -46,4 +46,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	rtn = ft_substr(s1, start, end - start);
 	return (rtn);
 }
-
