@@ -6,7 +6,7 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:24:31 by rnait-el          #+#    #+#             */
-/*   Updated: 2021/12/24 00:15:49 by rnait-el         ###   ########.fr       */
+/*   Updated: 2022/01/23 03:24:33 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	if ((dst == src) || n == 0)
 		return (dst);
 	if (!dst && !src)
-		return (0);
+		return (NULL);
 	dstc = (char *)dst;
 	srcc = (const char *)src;
 	while (n--)

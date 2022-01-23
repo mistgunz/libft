@@ -6,7 +6,7 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:24:41 by rnait-el          #+#    #+#             */
-/*   Updated: 2021/12/24 00:16:00 by rnait-el         ###   ########.fr       */
+/*   Updated: 2022/01/23 03:30:42 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	*ft_memset(void *s, int c, size_t len)
 	ss = (unsigned char *)s;
 	while (i < len)
 	{
-		ss[i] = c;
+		ss[i] = (unsigned char)c;
 		i++;
 	}
-	return (s = ss);
+	return (s);
 }

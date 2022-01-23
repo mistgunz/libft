@@ -6,7 +6,7 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:24:22 by rnait-el          #+#    #+#             */
-/*   Updated: 2022/01/21 23:35:37 by rnait-el         ###   ########.fr       */
+/*   Updated: 2022/01/23 03:15:12 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,17 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	character;
 	unsigned char	*str;
-	size_t	i;
+	unsigned int	i;
 
 	str = (unsigned char *)s;
 	character = (unsigned char)c;
 	i = 0;
-	while (i < n)
+	while (n > 0)
 	{
-		if (*str == character)
-		{
-			return (str);
-		}
-		str++;
+		if (str[i] == character)
+			return ((unsigned char *)(&str[i]));
 		i++;
+		n--;
 	}
 	return (NULL);
 }

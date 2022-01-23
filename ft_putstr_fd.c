@@ -6,7 +6,7 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:24:58 by rnait-el          #+#    #+#             */
-/*   Updated: 2021/12/24 00:18:30 by rnait-el         ###   ########.fr       */
+/*   Updated: 2022/01/23 03:36:47 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
+	if (s == NULL)
+		return ;
 	if (s)
 		while (s[i] != '\0')
 			write(fd, &s[i++], 1);

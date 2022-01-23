@@ -6,7 +6,7 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:25:39 by rnait-el          #+#    #+#             */
-/*   Updated: 2021/12/24 00:07:32 by rnait-el         ###   ########.fr       */
+/*   Updated: 2022/01/23 07:14:25 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,15 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	i;
 
 	i = 0;
-	l = 0;
-	while (src[l])
-		l++;
+	l = ft_strlen(src);
 	if (size > 0)
 	{
-		while (i < (size - 1) && size > 0 && *src)
+		while (i < (size - 1) && src[i])
 		{
-			*dst++ = *src++;
+			dst[i] = src[i];
 			i++;
 		}
-		*dst = '\0';
+		dst[i] = '\0';
 	}
 	return (l);
 }
