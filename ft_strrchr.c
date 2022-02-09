@@ -6,13 +6,13 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:26:01 by rnait-el          #+#    #+#             */
-/*   Updated: 2022/01/23 08:13:13 by rnait-el         ###   ########.fr       */
+/*   Updated: 2022/01/25 02:09:46 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(char *str, char c)
+char	*ft_strrchr(const char *str, int c)
 {
 	int	len;
 

@@ -6,7 +6,7 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:25:57 by rnait-el          #+#    #+#             */
-/*   Updated: 2022/01/23 08:03:22 by rnait-el         ###   ########.fr       */
+/*   Updated: 2022/01/24 10:52:47 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ char	*ft_strnstr(const char *str, const char *substr, size_t len)
 	sub_len = ft_strlen(substr);
 	if (sub_len == 0 || str == substr)
 		return (s);
-	while (s[i] != '\0' && i < len)
+	while (i < len && s[i])
 	{
 		c = 0;
-		while (s[i + c] != '\0' && substr[c] != '\0'
-			&& s[i + c] == substr[c] && i + c < len)
+		while (i + c < len && substr[c] != '\0'
+			&& s[i + c] == substr[c] && s[i + c] != '\0')
 			c++;
 		if (c == sub_len)
 			return (s + i);
