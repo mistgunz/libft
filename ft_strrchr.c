@@ -6,7 +6,7 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:26:01 by rnait-el          #+#    #+#             */
-/*   Updated: 2022/01/25 02:09:46 by rnait-el         ###   ########.fr       */
+/*   Updated: 2022/02/20 03:53:39 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *str, int c)
 	len = ft_strlen(str);
 	while (len >= 0)
 	{
-		if (str[len] == c)
+		if (str[len] == (char)c)
 			return ((char *)&str[len]);
 		len--;
 	}
