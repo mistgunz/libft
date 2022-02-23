@@ -6,7 +6,7 @@
 #    By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/23 21:06:52 by rnait-el          #+#    #+#              #
-#    Updated: 2022/02/20 01:29:02 by rnait-el         ###   ########.fr        #
+#    Updated: 2022/02/22 22:34:55 by rnait-el         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ SRCS	= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c f
 		  ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c \
 		  ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
 
-BSRCS	= ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
-		  ft_lstmap.c ft_lstnew.c ft_lstsize.c
+BSRCS	= ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c \
+		  ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
 
 CC		= gcc
 
