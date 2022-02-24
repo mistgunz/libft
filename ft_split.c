@@ -6,13 +6,13 @@
 /*   By: rnait-el <rnait-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 23:25:03 by rnait-el          #+#    #+#             */
-/*   Updated: 2021/12/24 00:16:22 by rnait-el         ###   ########.fr       */
+/*   Updated: 2022/02/24 03:15:20 by rnait-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_wcount(const char *s, char c)
+static int	wcount(const char *s, char c)
 {
 	int	i;
 
@@ -32,22 +32,22 @@ static int	ft_wcount(const char *s, char c)
 	return (i);
 }
 
-static char	*ft_strndup(const char *s, int n, char **b)
+static char	*ft_strndup(const char *s, int n, char **arr)
 {
-	char	*a;
+	char	*rtn;
 
-	a = malloc(sizeof(char) * n + 1);
-	if (a == NULL)
+	rtn = malloc(sizeof(char) * n + 1);
+	if (rtn == NULL)
 	{
-		free(b);
+		free(arr);
 		return (0);
 	}
-	ft_memcpy(a, s, n);
-	a[n] = '\0';
-	return (a);
+	ft_memcpy(rtn, s, n);
+	rtn[n] = '\0';
+	return (rtn);
 }
 
-static char	**ft_strmalldup(char **b, const char *s, char c)
+static char	**ft_strmalldup(char **arr, const char *s, char c)
 {
 	int	i;
 	int	j;
@@ -63,7 +63,7 @@ static char	**ft_strmalldup(char **b, const char *s, char c)
 		}
 		if ((*s == c && *s && *(s - 1) != c) || (!*s && *(s - 1) != c))
 		{
-			b[j] = ft_strndup(s - i, i, b);
+			arr[j] = ft_strndup(s - i, i, arr);
 			j++;
 			i = 0;
 		}
@@ -71,29 +71,29 @@ static char	**ft_strmalldup(char **b, const char *s, char c)
 			break ;
 		s++;
 	}
-	return (b);
+	return (arr);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**b;
+	char	**arr;
 	int		w_count;
 
 	if (!s)
 	{
-		b = malloc(sizeof(char *));
-		if (b == NULL)
-			return (0);
-		*b = 0;
-		return (b);
+		arr = malloc(sizeof(char *));
+		if (arr == NULL)
+			return (NULL);
+		*arr = 0;
+		return (arr);
 	}
 	while (*s == c && *s)
 		s++;
-	w_count = ft_wcount(s, c);
-	b = malloc(sizeof(char *) * (w_count + 1));
-	if (b == NULL)
-		return (0);
-	ft_strmalldup(b, s, c);
-	b[w_count] = NULL;
-	return (b);
+	w_count = wcount(s, c);
+	arr = malloc(sizeof(char *) * (w_count + 1));
+	if (arr == NULL)
+		return (NULL);
+	ft_strmalldup(arr, s, c);
+	arr[w_count] = NULL;
+	return (arr);
 }

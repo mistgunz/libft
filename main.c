@@ -17,7 +17,7 @@ char    mapi(unsigned int i, char c)
         else
                 return (c);
 }
-char mmpi(unsigned int i, char c)
+char mmpi2(unsigned int i, char c)
 {
     if (c >= 'a' && c <= 'z' )
         return ('X');
@@ -65,14 +65,16 @@ int main()
    /* char s[] = "tripouille";
 	char s2[] = "ltripouiel";
     printf("this is : %s",ft_strrchr(s, 't' + 256));
-    char s3[] = "1Vxbcde";
-    
-    printf("%s \n",ft_strmapi(s3,&mmpi));
-    //ft_striteri(s3,&ft_bzero2);
-    ft_bzero(s3,3);
+    */
+    char s3[] = "1Vxbcde fwfwf ffewf fwf";
+   /* printf("%s \n",ft_strmapi(s3,&mmpi2));
+    printf("%s\n",s3);
+    ft_striteri(s3,&ft_bzero2);
+    printf("%s\n",s3);
+    //ft_bzero(s3,3);
     printf("%s",s3+3);*/
-    
-    t_list *first,*second ,*third;
+    printf("%s\n",ft_split(s3,' ')[3]);
+   /* t_list *first,*second ,*third;
     first = ft_lstnew("111");
     second = ft_lstnew("222");
     third = ft_lstnew("333");
@@ -84,6 +86,6 @@ int main()
     //ft_lstiter(third,&ft_modify_list_with_d);
 
     printf("%d \n",ft_lstsize(first));
-    printf("%s",first->content);
+    printf("%s",first->content);*/
 
 }
