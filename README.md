@@ -1,1 +1,1 @@
-# libft
+A redo of C library usual functions
